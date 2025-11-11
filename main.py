@@ -9,9 +9,10 @@ class Node:
     syncedPaths: paths to locations that will be synced between nodes
     """
 
-    def __init__(userID : int, syncedPaths : list) -> None:
+    def __init__(self, userID : int, syncedPaths : list, nodes : dict) -> None:
         self.userID = userID
         self.syncedPtths = syncedPaths
+        self.nodes = nodes
         self.server = Server(userID, syncedPaths)
         self.client = Client(userID, syncedPaths)
 
